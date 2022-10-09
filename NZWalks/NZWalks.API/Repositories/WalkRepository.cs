@@ -26,7 +26,7 @@ namespace NZWalks.API.Repositories
         {
             var existingWalk = await nZWalksDbContext.Walks.FindAsync(id);
 
-            if (existingWalk != null)
+            if (existingWalk == null)
             {
                 return null;
             }
