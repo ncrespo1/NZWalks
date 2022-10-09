@@ -58,10 +58,10 @@ namespace NZWalks.API.Controllers
                 Population = addRegionRequest.Population
             };
 
-            // Pass the details to the Repository
+            // Passes the details to the Repository
             region = await regionRepository.AddAsync(region);
 
-            // Convert back to the DTO
+            // Converts back to a DTO
             var regionDTO = new Models.DTO.Region
             {
                 Id = region.Id,
@@ -113,7 +113,7 @@ namespace NZWalks.API.Controllers
                 Long = updateRegionRequest.Long,
                 Name = updateRegionRequest.Name,
                 Population = updateRegionRequest.Population
-            }
+            };
             //Updates Region using repository
             region = await regionRepository.UpdateAsync(id, region);
 
@@ -121,7 +121,7 @@ namespace NZWalks.API.Controllers
             {
                 return NotFound();
             }
-            //Converts Domain back to DTO
+            //Converts Domain back to a DTO
             var regionDTO = new Models.DTO.Region
             {
                 Id = region.Id,
