@@ -29,7 +29,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpGet]
-        [Route("id:guid")]
+        [Route("{id:guid}")]
         public async Task<IActionResult> GetWalkDifficultyById(Guid id)
         {
             var walkDifficulty = await walkDifficultyRepository.GetAsync(id);
@@ -65,7 +65,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpPut]
-        [Route("id:guid")]
+        [Route("{id:guid}")]
         public async Task<IActionResult> UpdateWalkDifficultyAsync(Guid id, Models.DTO.UpdateWalkDifficultyRequest updateWalkDifficultyRequest)
         {
             //Convert DTO to Domain Model
@@ -89,7 +89,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpDelete]
-        [Route("id:guid")]
+        [Route("{id:guid}")]
         public async Task<IActionResult> DeleteWalkDifficultyAsync(Guid id)
         {
             var walkDifficultyDomain = await walkDifficultyRepository.DeleteAsync(id);
